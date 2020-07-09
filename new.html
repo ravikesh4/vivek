@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        template {
+            display: none;
+        }
+
+        .content {
+            padding: 5px;
+            padding-left: 20px;
+        }
+
+        .container {
+            padding-right: 35px;
+            padding-left: 20px;
+        }
+
+        .container-item {
+            padding: 1px;
+        }
+
+        .container-item-without-padding {
+            padding: 0px;
+        }
+    </style>
+    <script src="sortable.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            Apple
+        </div>
+        <div class="container-item">
+            <div class="container">
+                <div class="content">
+                    Sour
+                </div>
+                <div class="content">
+                    Green
+                </div>
+                <div class="content">
+                    Red
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            Banana
+        </div>
+        <div class="container-item">
+            <div class="container">
+                <div class="content">
+                    Ripe
+                </div>
+                <div class="content">
+                    Raw
+                </div>
+                <div class="content">
+                    Fried
+                </div>
+                <div class="container-item">
+                    <div class="container">
+                        <div class="content">
+                            Spicy
+                        </div>
+                        <div class="content">
+                            Sweet
+                        </div>
+                        <div class="content">
+                            Salted
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            Cats
+        </div>
+        <div class="container-item">
+            <div class="container">
+                <div class="content">
+                    Large
+                </div>
+                <div class="container-item">
+                    <div class="container">
+                        <div class="content">
+                            Black
+                        </div>
+                        <div class="content">
+                            White
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    Small
+                </div>
+                <div class="container-item">
+                    <div class="container">
+                        <div class="content">
+                            Grey
+                        </div>
+                        <div class="content">
+                            Striped
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var sortableOptions2 = {
+            group: {
+                name: "sortable-list-2",
+                pull: true,
+                put: true,
+            },
+            animation: 250,
+            forceFallback: true
+
+        };
+
+        var containers = null;
+        containers = document.querySelectorAll(".container");
+        for (var i = 0; i < containers.length; i++) {
+            new Sortable(containers[i], sortableOptions2);
+        }
+
+    </script>
+</body>
+
+</html>
